@@ -1,5 +1,5 @@
 {% set name = "pooch" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f011ac44602dd0536b1aa30901c1e64c6fa938a1ea209a48417282689d69a25c
+  sha256: e0142b80b61fce06a9837c7040f79ffc2a94c271422460b86e73fee94f0a57e2
 
 build:
-  number: 1000
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -23,6 +23,7 @@ requirements:
     - python
     - requests
     - packaging
+    - appdirs
     - backports.tempfile  # [py2k]
     - pathlib  # [py2k]
 
@@ -35,7 +36,7 @@ test:
     - pytest --pyargs pooch.tests.test_integration
 
 about:
-  home: http://github.com/fatiando/pooch
+  home: https://github.com/fatiando/pooch
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
@@ -47,8 +48,8 @@ about:
     updating. (3) If the hash is different from the registry, Pooch will download a new
     version of the file. (4) If the hash still doesn't match, Pooch will raise an
     exception warning of possible data corruption.
-  doc_url: http://www.fatiando.org/pooch
-  dev_url: http://github.com/fatiando/pooch
+  doc_url: https://www.fatiando.org/pooch
+  dev_url: https://github.com/fatiando/pooch
 
 extra:
   recipe-maintainers:
