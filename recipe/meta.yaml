@@ -1,5 +1,5 @@
 {% set name = "pooch" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 963a91e6eb076f64306b90948cba090339238d2205d8e1ba82b38df5b4c72d09
+  sha256: da3ff3f6fa38440707eca04ec8cb8972dc83618b59aa38498a3fd70ca24aa8d4
 
 build:
   number: 0
