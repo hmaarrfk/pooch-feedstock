@@ -7,127 +7,22 @@ Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: A friend to fetch your Python library's sample data files
+Summary: A friend to fetch your data files
 
-Pooch will manage downloading your sample data files over HTTP from a server and
-storing them in a local directory. (1) Download a file only if it's not in the local
-storage. (2) Check the SHA256 hash to make sure the file is not corrupted or needs
-updating. (3) If the hash is different from the registry, Pooch will download a new
-version of the file. (4) If the hash still doesn't match, Pooch will raise an
-exception warning of possible data corruption.
+Pooch manages your remote data files. It automatically downloads and stores
+them in a local directory (using HTTP or FTP), with support for versioning,
+corruption checks, and custom download and post-processing operations.
 
 
 Current build status
 ====================
 
 
-<table>
-    
-  <tr>
-    <td>Azure</td>
+<table><tr><td>All platforms:</td>
     <td>
-      <details>
-        <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master">
-          </a>
-        </summary>
-        <table>
-          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
-          <tbody><tr>
-              <td>linux_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=linux&configuration=linux_python2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_python3.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=linux&configuration=linux_python3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_python3.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=linux&configuration=linux_python3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_python3.8</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=linux&configuration=linux_python3.8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=osx&configuration=osx_python2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_python3.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=osx&configuration=osx_python3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_python3.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=osx&configuration=osx_python3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_python3.8</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=osx&configuration=osx_python3.8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=win&configuration=win_python2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_python3.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=win&configuration=win_python3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_python3.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=win&configuration=win_python3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_python3.8</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master&jobName=win&configuration=win_python3.8" alt="variant">
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
-    </td>
-  </tr>
-  <tr>
-    <td>Linux_ppc64le</td>
-    <td>
-      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=798&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pooch-feedstock?branchName=master">
+      </a>
     </td>
   </tr>
 </table>

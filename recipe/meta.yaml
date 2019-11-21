@@ -1,5 +1,5 @@
 {% set name = "pooch" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,25 +7,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 74c63d3da3cfbde60f70b2ce85aa137ff920614072ad0c6df181aab547cdb714
+  sha256: 2fb8c521258fa557bb9d23cf8009dc750224a739ba4c6302ff2b111b59f9729c
 
 build:
+  noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
-    - python
   host:
-    - python
+    - python >=3.5
     - pip
   run:
-    - python
+    - python >=3.5
     - requests
     - packaging
     - appdirs
-    - backports.tempfile  # [py2k]
-    - pathlib  # [py2k]
 
 test:
   requires:
@@ -40,14 +37,11 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: "A friend to fetch your Python library's sample data files"
+  summary: "A friend to fetch your data files"
   description: |
-    Pooch will manage downloading your sample data files over HTTP from a server and
-    storing them in a local directory. (1) Download a file only if it's not in the local
-    storage. (2) Check the SHA256 hash to make sure the file is not corrupted or needs
-    updating. (3) If the hash is different from the registry, Pooch will download a new
-    version of the file. (4) If the hash still doesn't match, Pooch will raise an
-    exception warning of possible data corruption.
+    Pooch manages your remote data files. It automatically downloads and stores
+    them in a local directory (using HTTP or FTP), with support for versioning,
+    corruption checks, and custom download and post-processing operations.
   doc_url: https://www.fatiando.org/pooch
   dev_url: https://github.com/fatiando/pooch
 
