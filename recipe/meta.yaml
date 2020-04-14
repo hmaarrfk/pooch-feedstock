@@ -1,5 +1,5 @@
 {% set name = "pooch" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f1f7be3a365974e5861aaf7ba068c4f88b2cd4e840fcb5e1a787fe09a98d5bcc
+  sha256: b29687cd3a553d96d73c1fcbaa7551ff5b02a5503bdcd0fa1b1c96d18049d2c3
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -37,7 +37,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: "A friend to fetch your data files"
+  summary: A friend to fetch your data files
   description: |
     Pooch manages your remote data files. It automatically downloads and stores
     them in a local directory (using HTTP or FTP), with support for versioning,
