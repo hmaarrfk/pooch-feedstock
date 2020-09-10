@@ -5,7 +5,7 @@ Home: https://github.com/fatiando/pooch
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A friend to fetch your data files
 
