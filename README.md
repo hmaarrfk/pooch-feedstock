@@ -5,9 +5,13 @@ Home: https://github.com/fatiando/pooch
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pooch-feedstock/blob/master/LICENSE.txt)
 
 Summary: A friend to fetch your data files
+
+Development: https://github.com/fatiando/pooch
+
+Documentation: https://www.fatiando.org/pooch
 
 Pooch manages your remote data files. It automatically downloads and stores
 them in a local directory (using HTTP or FTP), with support for versioning,
