@@ -37,6 +37,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pooch-green.svg)](https://anaconda.org/conda-forge/pooch) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pooch.svg)](https://anaconda.org/conda-forge/pooch) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pooch.svg)](https://anaconda.org/conda-forge/pooch) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pooch.svg)](https://anaconda.org/conda-forge/pooch) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pooch--extra-green.svg)](https://anaconda.org/conda-forge/pooch-extra) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pooch-extra.svg)](https://anaconda.org/conda-forge/pooch-extra) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pooch-extra.svg)](https://anaconda.org/conda-forge/pooch-extra) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pooch-extra.svg)](https://anaconda.org/conda-forge/pooch-extra) |
 
 Installing pooch
 ================
@@ -48,16 +49,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pooch` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pooch, pooch-extra` can be installed with `conda`:
 
 ```
-conda install pooch
+conda install pooch pooch-extra
 ```
 
 or with `mamba`:
 
 ```
-mamba install pooch
+mamba install pooch pooch-extra
 ```
 
 It is possible to list all of the versions of `pooch` available on your platform with `conda`:
