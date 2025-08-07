@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
 
 requirements:
   host:
@@ -19,7 +19,6 @@ requirements:
 
 outputs:
   - name: {{ name }}
-    version: {{ version }}
     build:
       noarch: python
       script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -45,18 +44,14 @@ outputs:
         - pytest --pyargs pooch.tests.test_integration
 
   - name: {{ name }}-extra
-    version: {{ version }}
     build:
       noarch: python
-      script: {{ PYTHON }} -m pip install . --no-deps -vv
 
     requirements:
       host:
         - python {{ python_min }}
-        - pip
-        - setuptools_scm >=6.2
       run:
-        - {{ pin_subpackage(name) }}
+        - {{ pin_subpackage(name, exact=True) }}
         - tqdm >=4.41.0,<5.0.0
         - python-xxhash >=1.4.3
         - paramiko >=2.7.0
