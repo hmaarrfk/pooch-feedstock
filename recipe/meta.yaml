@@ -8,10 +8,13 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 76561f0de68a01da4df6af38e9955c4c9d1a5c90da73f7e40276a5728ec83d10
+  patches:
+    # https://github.com/fatiando/pooch/pull/458
+    - 458_tar_extract_all.diff
 
 build:
   noarch: python
-  number: 2
+  number: 3
 
 requirements:
   host:
