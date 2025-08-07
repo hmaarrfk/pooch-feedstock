@@ -156,6 +156,3 @@ Feedstock Maintainers
 * [@dopplershift](https://github.com/dopplershift/)
 * [@leouieda](https://github.com/leouieda/)
 
-
-<!-- dummy commit to enable rerendering -->
-
